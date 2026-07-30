@@ -46,6 +46,7 @@ const Agents = () => {
                   <p className="text-gray-600 mb-4">{agent.description}</p>
 
                   <div className="flex space-x-4">
+                    {agent.social?.facebook && (
                     <a
                       href={agent.social.facebook}
                       target="_blank"
@@ -54,7 +55,9 @@ const Agents = () => {
                     >
                       <IoLogoFacebook className="w-5 h-5" />
                     </a>
+                    )}
 
+                    {agent.social?.instagram && (
                     <a
                       href={agent.social.instagram}
                       target="_blank"
@@ -63,7 +66,9 @@ const Agents = () => {
                     >
                       <IoLogoInstagram className="w-5 h-5" />
                     </a>
+                    )}
 
+                    {agent.social?.linkedin && (
                     <a
                       href={agent.social.linkedin}
                       target="_blank"
@@ -72,6 +77,7 @@ const Agents = () => {
                     >
                       <IoLogoLinkedin className="w-5 h-5" />
                     </a>
+                    )}
                   </div>
                 </div>
               </Card>

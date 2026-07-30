@@ -18,7 +18,7 @@ const ServicesSection = () => {
           Nuestros Servicios
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Ofrecemos soluciones integrales para todas tus necesidades inmobiliarias
+          Acompañamos cada etapa de tu decisión inmobiliaria, con respaldo y experiencia.
         </p>
       </div>
       

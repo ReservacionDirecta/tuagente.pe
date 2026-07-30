@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { IoHome, IoBuild, IoPeople, IoMenu, IoClose, IoLogOut, IoChevronDown, IoDocumentText } from 'react-icons/io5';
@@ -60,7 +60,6 @@ const AdminLayout = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Mobile overlay */}
       {sidebarOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
@@ -69,15 +68,10 @@ const AdminLayout = () => {
           </div>
         </div>
       )}
-
-      {/* Desktop sidebar */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:w-64 lg:bg-primary lg:flex lg:flex-col">
         <SidebarContent />
       </div>
-
-      {/* Main content area */}
       <div className="lg:pl-64 min-h-screen flex flex-col">
-        {/* Top bar */}
         <div className="bg-white shadow-sm sticky top-0 z-30">
           <div className="flex items-center justify-between px-4 py-3">
             <button
@@ -129,8 +123,6 @@ const AdminLayout = () => {
             </div>
           </div>
         </div>
-
-        {/* Page content */}
         <div className="p-4 sm:p-6 flex-1">
           <Outlet />
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoBuild, IoPeople, IoStar, IoAlertCircle } from 'react-icons/io5';
 import { api } from '../../api/config';
@@ -55,8 +55,6 @@ const Dashboard = () => {
           {error}
         </div>
       )}
-
-      {/* Stats cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {statCards.map((stat) => (
           <div key={stat.name} className="bg-white rounded-xl shadow-sm p-4 sm:p-6">
@@ -72,8 +70,6 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-
-      {/* Recent properties */}
       <div className="bg-white rounded-xl shadow-sm">
         <div className="p-4 sm:p-6 border-b flex items-center justify-between">
           <h2 className="text-base sm:text-lg font-semibold text-gray-900">Propiedades Recientes</h2>
@@ -81,8 +77,6 @@ const Dashboard = () => {
             Ver todas →
           </Link>
         </div>
-
-        {/* Desktop table */}
         <div className="hidden md:block overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
@@ -122,8 +116,6 @@ const Dashboard = () => {
             </tbody>
           </table>
         </div>
-
-        {/* Mobile cards */}
         <div className="md:hidden divide-y divide-gray-100">
           {recentProperties.map((prop) => (
             <div key={prop.id} className="p-4 hover:bg-gray-50">

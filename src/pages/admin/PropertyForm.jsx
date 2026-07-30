@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IoArrowBack, IoTrash } from 'react-icons/io5';
 import { api } from '../../api/config';
@@ -142,7 +142,6 @@ const PropertyForm = () => {
 
       <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm p-4 sm:p-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Column 1: Basic Info */}
           <div className="space-y-5">
             <div className="border-b pb-3">
               <h3 className="font-semibold text-gray-900 text-lg">Información Básica</h3>
@@ -155,7 +154,7 @@ const PropertyForm = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                placeholder="Ej: Casa Moderna en Miraflores"
+                placeholder="Título de la propiedad"
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
@@ -210,7 +209,7 @@ const PropertyForm = () => {
                 value={form.description}
                 onChange={handleChange}
                 rows={4}
-                placeholder="Describe la propiedad, sus características principales..."
+                placeholder="Indica las características principales de la propiedad"
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
@@ -226,8 +225,6 @@ const PropertyForm = () => {
               <span className="text-sm font-medium text-gray-700">Marcar como propiedad destacada</span>
             </label>
           </div>
-
-          {/* Column 2: Features, Location, Images */}
           <div className="space-y-5">
             <div className="border-b pb-3">
               <h3 className="font-semibold text-gray-900 text-lg">Características</h3>
@@ -295,7 +292,7 @@ const PropertyForm = () => {
                 name="address"
                 value={form.address}
                 onChange={handleChange}
-                placeholder="Av. Principal 123"
+                placeholder="Dirección"
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
@@ -329,8 +326,6 @@ const PropertyForm = () => {
             <div className="border-b pb-3 pt-2">
               <h3 className="font-semibold text-gray-900 text-lg">Imágenes</h3>
             </div>
-
-            {/* Existing images */}
             {existingImages.length > 0 && (
               <div>
                 <p className="text-sm text-gray-500 mb-2">Imágenes actuales ({existingImages.length})</p>
@@ -363,8 +358,6 @@ const PropertyForm = () => {
                 Has eliminado todas las imágenes. Sube al menos una imagen nueva.
               </p>
             )}
-
-            {/* New images upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 {isEdit ? 'Agregar nuevas imágenes' : 'Imágenes de la propiedad'}
@@ -382,8 +375,6 @@ const PropertyForm = () => {
               />
               <p className="text-xs text-gray-500 mt-1">JPEG, PNG o WebP. Máx. 5MB por imagen.</p>
             </div>
-
-            {/* Preview new images */}
             {newImages.length > 0 && (
               <div>
                 <p className="text-sm text-gray-500 mb-2">Imágenes a subir ({newImages.length})</p>
@@ -409,8 +400,6 @@ const PropertyForm = () => {
             )}
           </div>
         </div>
-
-        {/* Submit buttons */}
         <div className="mt-6 sm:mt-8 pt-6 border-t flex flex-col-reverse sm:flex-row sm:justify-end gap-3">
           <button
             type="button"

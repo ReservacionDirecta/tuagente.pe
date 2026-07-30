@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoAdd, IoPencil, IoTrash, IoSearch } from 'react-icons/io5';
 import { api } from '../../api/config';
@@ -38,7 +38,6 @@ const PropertiesAdmin = () => {
 
   return (
     <div>
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-6">
         <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Propiedades</h1>
         <Link
@@ -49,8 +48,6 @@ const PropertiesAdmin = () => {
           Nueva Propiedad
         </Link>
       </div>
-
-      {/* Filters */}
       <div className="bg-white rounded-xl shadow-sm p-3 sm:p-4 mb-4 sm:mb-6 flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
           <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -73,8 +70,6 @@ const PropertiesAdmin = () => {
           ))}
         </select>
       </div>
-
-      {/* Desktop table */}
       <div className="hidden md:block bg-white rounded-xl shadow-sm overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-50">
@@ -138,8 +133,6 @@ const PropertiesAdmin = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Mobile cards */}
       <div className="md:hidden space-y-3">
         {loading ? (
           <div className="bg-white rounded-xl shadow-sm p-8 text-center text-gray-500">Cargando...</div>

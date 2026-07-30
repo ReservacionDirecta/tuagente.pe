@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { IoAdd, IoTrash, IoClose } from 'react-icons/io5';
 import { api } from '../../api/config';
 
@@ -46,7 +46,6 @@ const UsersAdmin = () => {
 
   return (
     <div>
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-6">
         <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Usuarios</h1>
         <button
@@ -57,8 +56,6 @@ const UsersAdmin = () => {
           Nuevo Usuario
         </button>
       </div>
-
-      {/* Desktop table */}
       <div className="hidden md:block bg-white rounded-xl shadow-sm overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-50">
@@ -105,8 +102,6 @@ const UsersAdmin = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Mobile cards */}
       <div className="md:hidden space-y-3">
         {loading ? (
           <div className="bg-white rounded-xl shadow-sm p-8 text-center text-gray-500">Cargando...</div>
@@ -142,8 +137,6 @@ const UsersAdmin = () => {
           </div>
         ))}
       </div>
-
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/50" onClick={() => setShowModal(false)} />
