@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { IoArrowBack, IoCalendar, IoPerson, IoTime } from 'react-icons/io5';
 import SEO from '../components/common/SEO';
 import Container from '../components/layout/Container';
 import Section from '../components/layout/Section';
 import Badge from '../components/ui/Badge';
-import { blogPosts } from '../utils/constants';
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+  const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`/api/blog/${slug}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Not found');
+        return res.json();
+      })
+      .then(data => setPost(data))
+      .catch(() => setPost(null))
+      .finally(() => setLoading(false));
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -32,7 +51,7 @@ const BlogPost = () => {
       <main className="pt-20">
         <section className="relative h-64 md:h-96">
           <img
-            src={post.image}
+            src={post.image || '/images/blog/default.jpg'}
             alt={post.title}
             className="w-full h-full object-cover"
           />
@@ -58,7 +77,7 @@ const BlogPost = () => {
 
               <div className="flex items-center">
                 <IoCalendar className="w-5 h-5 mr-2" />
-                <span>{post.date}</span>
+                <span>{post.created_at?.split(' ')[0] || post.date}</span>
               </div>
 
               <div className="flex items-center">

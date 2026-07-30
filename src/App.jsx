@@ -20,6 +20,8 @@ import PropertiesAdmin from './pages/admin/PropertiesAdmin';
 import PropertyForm from './pages/admin/PropertyForm';
 import UsersAdmin from './pages/admin/UsersAdmin';
 import AppointmentsAdmin from './pages/admin/AppointmentsAdmin';
+import BlogAdmin from './pages/admin/BlogAdmin';
+import BlogForm from './pages/admin/BlogForm';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 
 const ProtectedRoute = ({ children }) => {
@@ -61,6 +63,9 @@ const App = () => {
             <Route path="propiedades/:id/editar" element={<PropertyForm />} />
             <Route path="usuarios" element={<UsersAdmin />} />
             <Route path="citas" element={<AppointmentsAdmin />} />
+            <Route path="blog" element={<BlogAdmin />} />
+            <Route path="blog/nuevo" element={<BlogForm />} />
+            <Route path="blog/:id/editar" element={<BlogForm />} />
           </Route>
         </Routes>
       </AuthProvider>

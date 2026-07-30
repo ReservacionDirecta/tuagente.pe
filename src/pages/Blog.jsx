@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/common/SEO';
 import Container from '../components/layout/Container';
 import Section from '../components/layout/Section';
 import BlogCard from '../components/home/BlogCard';
-import { blogPosts } from '../utils/constants';
 
 const Blog = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/blog')
+      .then(res => res.json())
+      .then(data => setPosts(Array.isArray(data) ? data : []))
+      .catch(() => setPosts([]));
+  }, []);
+
   return (
     <>
       <SEO
@@ -27,10 +35,13 @@ const Blog = () => {
 
         <Section>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <BlogCard key={post.slug} article={post} />
+            {posts.map((post) => (
+              <BlogCard key={post.id || post.slug} article={post} />
             ))}
           </div>
+          {posts.length === 0 && (
+            <p className="text-center text-gray-500 py-8">No hay artículos disponibles.</p>
+          )}
         </Section>
       </main>
     </>

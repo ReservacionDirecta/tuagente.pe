@@ -67,6 +67,21 @@ db.exec(`
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE
   );
+
+  CREATE TABLE IF NOT EXISTS blog_posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug TEXT UNIQUE NOT NULL,
+    title TEXT NOT NULL,
+    excerpt TEXT,
+    content TEXT,
+    image TEXT,
+    category TEXT DEFAULT 'General',
+    author TEXT DEFAULT 'Equipo TUAGENTE.PE',
+    readTime TEXT DEFAULT '5 min',
+    status TEXT DEFAULT 'published',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
 `);
 
 // Seed admin user if not exists
@@ -131,6 +146,47 @@ if (propCount.count === 0) {
 
   insertMany();
   console.log('Demo properties seeded');
+}
+
+// Seed demo blog posts if table is empty
+const blogCount = db.prepare('SELECT COUNT(*) as count FROM blog_posts').get();
+if (blogCount.count === 0) {
+  const demoPosts = [
+    {
+      slug: 'santiago-de-surco',
+      title: 'Santiago de Surco: El distrito familiar por excelencia en Lima',
+      excerpt: 'Descubre por qué Santiago de Surco es el distrito preferido para familias que buscan calidad de vida en Lima.',
+      content: '<p>Santiago de Surco se ha consolidado como uno de los distritos más buscados de Lima para familias. Con una excelente infraestructura, parques y centros educativos de primer nivel, este distrito ofrece todo lo que una familia necesita.</p><h2>¿Por qué elegir Santiago de Surco?</h2><h3>Calidad de Vida</h3><p>Santiago de Surco cuenta con amplias zonas verdes, parques modernos y una excelente conectividad vial. Los residentes disfrutan de un ambiente seguro y familiar.</p><h3>Educación</h3><p>El distrito alberga algunos de los mejores colegios e instituciones educativas de Lima, incluyendo colegios bilingües e internacionales.</p><h3>Comercio y Servicios</h3><p>La avenida La Marina y la avenida Benavides ofrecen una amplia variedad de tiendas, restaurantes y centros comerciales.</p>',
+      image: '/images/blog/santiago-surco.jpg',
+      category: 'Zonas',
+      author: 'Equipo TUAGENTE.PE',
+      readTime: '5 min',
+    },
+    {
+      slug: 'consejos-comprar-vivienda',
+      title: '5 Consejos vitales antes de comprar tu primera vivienda en Lima',
+      excerpt: 'Guía completa para primeros compradores de vivienda en la capital peruana.',
+      content: '<p>Comprar tu primera vivienda es una de las decisiones más importantes de tu vida. Aquí te compartimos 5 consejos esenciales para que tomes la mejor decisión.</p><h2>1. Define tu presupuesto</h2><p>Antes de empezar a buscar, es fundamental saber cuánto puedes invertir. Considera no solo el precio de venta, sino también los gastos adicionales como impuestos, escrituras y posible remodelación.</p><h2>2. Elige la ubicación correcta</h2><p>La ubicación es clave en una inversión inmobiliaria. Considera factores como proximidad a tu lugar de trabajo, acceso a transporte público, servicios cercanos y seguridad de la zona.</p><h2>3. Revisa la documentación</h2><p>Asegúrate de que la propiedad tenga toda la documentación en orden: título de propiedad, certificado de gravámenes, pagos de impuestos al día y planos aprobados.</p><h2>4. No te apresures</h2><p>Tomate tu tiempo para visitar varias opciones. No compres la primera propiedad que veas sin antes comparar con otras alternativas.</p><h2>5. Busca asesoría profesional</h2><p>Un buen agente inmobiliario puede guiarte en todo el proceso y ayudarte a evitar errores costosos.</p>',
+      image: '/images/blog/consejos-compra.jpg',
+      category: 'Consejos',
+      author: 'Equipo TUAGENTE.PE',
+      readTime: '7 min',
+    },
+  ];
+
+  const insertBlog = db.prepare(`
+    INSERT INTO blog_posts (slug, title, excerpt, content, image, category, author, readTime)
+    VALUES (@slug, @title, @excerpt, @content, @image, @category, @author, @readTime)
+  `);
+
+  const insertBlogs = db.transaction(() => {
+    for (const post of demoPosts) {
+      insertBlog.run(post);
+    }
+  });
+
+  insertBlogs();
+  console.log('Demo blog posts seeded');
 }
 
 module.exports = db;
