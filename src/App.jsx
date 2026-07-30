@@ -5,7 +5,6 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
 
-// Public pages
 import Home from './pages/Home';
 import Properties from './pages/Properties';
 import PropertyCategory from './pages/PropertyCategory';
@@ -14,8 +13,6 @@ import Agents from './pages/Agents';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-
-// Admin pages
 import Login from './pages/Login';
 import AdminLayout from './components/admin/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
@@ -43,7 +40,6 @@ const App = () => {
     <Router>
       <AuthProvider>
         <Routes>
-          {/* Public Routes */}
           <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
           <Route path="/propiedades" element={<PublicLayout><Properties /></PublicLayout>} />
           <Route path="/propiedades/:category" element={<PublicLayout><PropertyCategory /></PublicLayout>} />
@@ -53,10 +49,8 @@ const App = () => {
           <Route path="/blog" element={<PublicLayout><Blog /></PublicLayout>} />
           <Route path="/blog/:slug" element={<PublicLayout><BlogPost /></PublicLayout>} />
 
-          {/* Login */}
           <Route path="/login" element={<Login />} />
 
-          {/* Admin Routes */}
           <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
             <Route index element={<Dashboard />} />
             <Route path="propiedades" element={<PropertiesAdmin />} />
