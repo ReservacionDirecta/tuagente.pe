@@ -121,9 +121,9 @@ export const properties = [
     category: 'Oficinas',
     operation: 'Comprar',
     name: 'Oficina Premium San Isidro',
-    price: 100000,
+    price: 245000,
     currency: 'PEN',
-    priceDisplay: 'S/100,000.00',
+    priceDisplay: 'S/245,000.00',
     image: '/images/properties/oficina-19.jpg',
     images: [
       '/images/properties/oficina-19.jpg',
@@ -153,9 +153,9 @@ export const properties = [
     category: 'Locales Comerciales',
     operation: 'Alquilar',
     name: 'Local Comercial Centro',
-    price: 500,
+    price: 850,
     currency: 'PEN',
-    priceDisplay: 'S/500.00',
+    priceDisplay: 'S/850.00',
     image: '/images/properties/local-18.jpg',
     images: [
       '/images/properties/local-18.jpg',
@@ -185,16 +185,16 @@ export const properties = [
     category: 'Locales Comerciales',
     operation: 'Comprar',
     name: 'Local Comercial San Miguel',
-    price: 100000,
+    price: 165000,
     currency: 'PEN',
-    priceDisplay: 'S/100,000.00',
+    priceDisplay: 'S/165,000.00',
     image: '/images/properties/local-27.jpg',
     images: [
       '/images/properties/local-27.jpg',
       '/images/properties/local-27-2.jpg',
       '/images/properties/local-27-3.jpg',
     ],
-    description: 'Local con frenting a principal avenida comercial.',
+    description: 'Local con frente a principal avenida comercial.',
     features: {
       bedrooms: 0,
       bathrooms: 1,
@@ -217,9 +217,9 @@ export const properties = [
     category: 'Casas',
     operation: 'Alquilar',
     name: 'Casa con Jardín La Molina',
-    price: 500,
+    price: 2200,
     currency: 'PEN',
-    priceDisplay: 'S/500.00',
+    priceDisplay: 'S/2,200.00',
     image: '/images/properties/casa-95.jpg',
     images: [
       '/images/properties/casa-95.jpg',
@@ -249,9 +249,9 @@ export const properties = [
     category: 'Casas',
     operation: 'Comprar',
     name: 'Casa Moderna Surco',
-    price: 100000,
+    price: 320000,
     currency: 'PEN',
-    priceDisplay: 'S/100,000.00',
+    priceDisplay: 'S/320,000.00',
     image: '/images/properties/casa-88.jpg',
     images: [
       '/images/properties/casa-88.jpg',
@@ -281,9 +281,9 @@ export const properties = [
     category: 'Departamentos',
     operation: 'Alquilar',
     name: 'Departamento Miraflores',
-    price: 500,
+    price: 1500,
     currency: 'PEN',
-    priceDisplay: 'S/500.00',
+    priceDisplay: 'S/1,500.00',
     image: '/images/properties/departamento-34.jpg',
     images: [
       '/images/properties/departamento-34.jpg',
@@ -313,9 +313,9 @@ export const properties = [
     category: 'Departamentos',
     operation: 'Comprar',
     name: 'Departamento de Lujo Miraflores',
-    price: 100000,
+    price: 285000,
     currency: 'PEN',
-    priceDisplay: 'S/100,000.00',
+    priceDisplay: 'S/285,000.00',
     image: '/images/properties/departamento-22.jpg',
     images: [
       '/images/properties/departamento-22.jpg',
@@ -351,11 +351,6 @@ export const agents = [
     phone: '+51 947 859 358',
     email: 'carlos@tuagente.com.pe',
     description: 'Más de 15 años de experiencia en el mercado inmobiliario peruano.',
-    social: {
-      facebook: '#',
-      instagram: '#',
-      linkedin: '#',
-    },
   },
   {
     id: 2,
@@ -365,11 +360,6 @@ export const agents = [
     phone: '+51 947 859 359',
     email: 'maria@tuagente.com.pe',
     description: 'Especialista en propiedades residenciales en Lima.',
-    social: {
-      facebook: '#',
-      instagram: '#',
-      linkedin: '#',
-    },
   },
   {
     id: 3,
@@ -379,11 +369,6 @@ export const agents = [
     phone: '+51 947 859 360',
     email: 'roberto@tuagente.com.pe',
     description: 'Experto en locales comerciales y oficinas.',
-    social: {
-      facebook: '#',
-      instagram: '#',
-      linkedin: '#',
-    },
   },
 ];
 
@@ -412,7 +397,7 @@ export const blogPosts = [
     image: '/images/blog/santiago-surco.jpg',
     category: 'Zonas',
     date: '15 Nov 2024',
-    author: 'TuAgente',
+    author: 'Equipo TUAGENTE.PE',
     readTime: '5 min',
   },
   {
@@ -448,7 +433,7 @@ export const blogPosts = [
     image: '/images/blog/consejos-compra.jpg',
     category: 'Consejos',
     date: '10 Nov 2024',
-    author: 'TuAgente',
+    author: 'Equipo TUAGENTE.PE',
     readTime: '7 min',
   },
 ];

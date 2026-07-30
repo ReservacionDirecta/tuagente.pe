@@ -57,15 +57,12 @@ const Header = () => {
     >
       <Container>
         <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className={`text-2xl font-bold ${useDarkText ? 'text-primary' : 'text-white'}`}>
               TUAGENTE
               <span className="text-secondary">.PE</span>
             </span>
           </Link>
-          
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <div
@@ -89,8 +86,6 @@ const Header = () => {
                     <IoChevronDown className="w-4 h-4" />
                   )}
                 </Link>
-                
-                {/* Dropdown */}
                 <AnimatePresence>
                   {item.children && activeDropdown === item.name && (
                     <motion.div
@@ -118,15 +113,11 @@ const Header = () => {
               </div>
             ))}
           </div>
-          
-          {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="secondary" size="sm">
               Agenda tu visita
             </Button>
           </div>
-          
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg ${
@@ -141,8 +132,6 @@ const Header = () => {
           </button>
         </nav>
       </Container>
-      
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
