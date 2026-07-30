@@ -1,23 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+
   return (
-    <section className="relative min-h-screen flex items-center">
-      <div
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
+      <motion.div
+        style={{ y: bgY }}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/images/hero-lima.jpg')`,
-        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60" />
-      </div>
+      </motion.div>
 
       <Container className="relative z-10">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mx-auto text-center lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -26,7 +31,7 @@ const HeroSection = () => {
           >
             Encuentra con nosotros el inmueble que buscas
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,19 +40,19 @@ const HeroSection = () => {
           >
             Descubre nuestra selección de propiedades exclusivas en las mejores ubicaciones de Lima
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex flex-col sm:flex-row gap-4"
+            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <Link to="/propiedades">
               <Button variant="secondary" size="lg">
                 Ver propiedades
               </Button>
             </Link>
-            
+
             <Link to="/contacto">
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 Agenda una visita
