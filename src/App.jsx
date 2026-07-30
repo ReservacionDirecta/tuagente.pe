@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
+import BackToTop from './components/common/BackToTop';
 
 import Home from './pages/Home';
 import Properties from './pages/Properties';
@@ -33,6 +34,7 @@ const ProtectedRoute = ({ children }) => {
 const PublicLayout = ({ children }) => (
   <div className="min-h-screen flex flex-col">
     <ScrollToTop />
+    <BackToTop />
     <Header />
     <main className="flex-grow">{children}</main>
     <Footer />

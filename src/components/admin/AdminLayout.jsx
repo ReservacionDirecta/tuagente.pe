@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { IoHome, IoBuild, IoPeople, IoMenu, IoClose, IoLogOut, IoChevronDown, IoDocumentText, IoCalendar } from 'react-icons/io5';
@@ -10,8 +10,11 @@ const AdminLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
   const navItems = [
-    { name: 'Dashboard', href: '/admin', icon: IoHome },
     { name: 'Propiedades', href: '/admin/propiedades', icon: IoBuild },
     { name: 'Citas', href: '/admin/citas', icon: IoCalendar },
     { name: 'Blog', href: '/admin/blog', icon: IoDocumentText },
