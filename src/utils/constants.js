@@ -441,7 +441,7 @@ export const blogPosts = [
 export const contactInfo = {
   address: 'Cll. Solidaridad Nro 105, Santiago de Surco, Lima',
   phone: '947 859 358',
-  email: 'contacto@tuagente.com.pe',
+  email: 'contacto@tuagente.pe',
   hours: 'Lunes a Domingo 9am a 6pm',
   social: {
     facebook: 'https://facebook.com/tuagente.pe',
