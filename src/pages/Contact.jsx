@@ -18,10 +18,6 @@ const Contact = () => {
     handleSubmit
   } = useContactForm();
 
-  const onSubmit = async (data) => {
-    console.log('Form submitted:', data);
-  };
-
   return (
     <>
       <SEO
@@ -54,7 +50,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={(e) => { e.preventDefault(); handleSubmit(onSubmit); }}>
+              <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Input
                     label="Nombre"
@@ -172,8 +168,17 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">Mapa de ubicación</p>
+              <div className="rounded-lg overflow-hidden border border-gray-200">
+                <iframe
+                  title="Ubicación de TUAGENTE.PE"
+                  width="100%"
+                  height="320"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(contactInfo.address)}&output=embed`}
+                  className="w-full"
+                />
               </div>
             </div>
           </div>

@@ -6,8 +6,7 @@ import Button from '../ui/Button';
 const CTASection = () => {
   return (
     <section className="relative py-24">
-      {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/images/cta-background.jpg')`,
@@ -15,8 +14,7 @@ const CTASection = () => {
       >
         <div className="absolute inset-0 bg-primary bg-opacity-90" />
       </div>
-      
-      {/* Content */}
+
       <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

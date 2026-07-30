@@ -9,7 +9,6 @@ const BlogCard = ({ article }) => {
   
   return (
     <Card hover className="overflow-hidden">
-      {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}
@@ -20,8 +19,7 @@ const BlogCard = ({ article }) => {
           <Badge variant="secondary">{category}</Badge>
         </div>
       </div>
-      
-      {/* Content */}
+
       <div className="p-6">
         <div className="flex items-center text-sm text-gray-500 mb-3">
           <span>{date}</span>

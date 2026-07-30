@@ -7,6 +7,7 @@ import Container from '../components/layout/Container';
 import Section from '../components/layout/Section';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
+import { contactInfo } from '../utils/constants';
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -205,23 +206,23 @@ const PropertyDetail = () => {
 
                 <div className="space-y-3 mb-6">
                   <a
-                    href="tel:+51947859358"
+                    href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
                     className="flex items-center text-gray-700 hover:text-primary transition-colors"
                   >
                     <IoCall className="w-5 h-5 mr-3" />
-                    947 859 358
+                    {contactInfo.phone}
                   </a>
 
                   <a
-                    href="mailto:contacto@tuagente.com.pe"
+                    href={`mailto:${contactInfo.email}`}
                     className="flex items-center text-gray-700 hover:text-primary transition-colors"
                   >
                     <IoMail className="w-5 h-5 mr-3" />
-                    contacto@tuagente.com.pe
+                    {contactInfo.email}
                   </a>
 
                   <a
-                    href="https://wa.me/51947859358"
+                    href={contactInfo.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-700 hover:text-primary transition-colors"

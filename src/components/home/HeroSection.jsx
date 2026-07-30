@@ -7,18 +7,15 @@ import Button from '../ui/Button';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center">
-      {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/images/hero-lima.jpg')`,
         }}
       >
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60" />
       </div>
-      
-      {/* Content */}
+
       <Container className="relative z-10">
         <div className="max-w-2xl">
           <motion.h1
@@ -59,8 +56,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </Container>
-      
-      {/* Scroll Indicator */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

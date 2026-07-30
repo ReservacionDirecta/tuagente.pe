@@ -4,6 +4,7 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoWhatsapp, IoMail, IoCall, IoLoca
 import Container from './Container';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
+import { contactInfo } from '../../utils/constants';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -25,9 +26,9 @@ const Footer = () => {
   ];
   
   const socialLinks = [
-    { name: 'Facebook', icon: IoLogoFacebook, href: 'https://facebook.com/tuagente.pe' },
-    { name: 'Instagram', icon: IoLogoInstagram, href: 'https://instagram.com/tuagente.pe' },
-    { name: 'WhatsApp', icon: IoLogoWhatsapp, href: 'https://wa.me/51947859358' },
+    { name: 'Facebook', icon: IoLogoFacebook, href: contactInfo.social.facebook },
+    { name: 'Instagram', icon: IoLogoInstagram, href: contactInfo.social.instagram },
+    { name: 'WhatsApp', icon: IoLogoWhatsapp, href: contactInfo.social.whatsapp },
   ];
   
   const handleSubmit = (e) => {
@@ -40,7 +41,6 @@ const Footer = () => {
     <footer className="bg-primary text-white">
       <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Column 1: Logo + About */}
           <div>
             <Link to="/" className="inline-block">
               <span className="text-2xl font-bold">
@@ -49,8 +49,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 text-gray-300 leading-relaxed">
-              Somos una agencia inmobiliaria líder en Lima, ofreciendo soluciones integrales 
-              para todas tus necesidades inmobiliarias. Encuentra tu hogar ideal con nosotros.
+              Acompañamos a familias y empresas a encontrar la propiedad ideal en Lima desde 2014.
             </p>
             
             <div className="flex space-x-4 mt-6">
@@ -67,8 +66,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
-          {/* Column 2: Quick Links */}
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-3">
@@ -84,8 +82,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
-          {/* Column 3: Property Types */}
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Tipos de Propiedad</h3>
             <ul className="space-y-3">
@@ -101,27 +98,24 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
-          {/* Column 4: Contact + Newsletter */}
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             
             <div className="space-y-4 mb-6">
               <div className="flex items-start space-x-3">
                 <IoLocation className="w-5 h-5 text-secondary mt-0.5" />
-                <span className="text-gray-300">
-                  Cll. Solidaridad Nro 105, Santiago de Surco, Lima
-                </span>
+                <span className="text-gray-300">{contactInfo.address}</span>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <IoCall className="w-5 h-5 text-secondary" />
-                <span className="text-gray-300">947 859 358</span>
+                <span className="text-gray-300">{contactInfo.phone}</span>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <IoMail className="w-5 h-5 text-secondary" />
-                <span className="text-gray-300">contacto@tuagente.com.pe</span>
+                <span className="text-gray-300">{contactInfo.email}</span>
               </div>
             </div>
             
@@ -144,22 +138,21 @@ const Footer = () => {
           </div>
         </div>
       </Container>
-      
-      {/* Bottom Bar */}
+
       <div className="border-t border-white border-opacity-10">
         <Container className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} TUAGENTE.PE. Todos los derechos reservados.
             </p>
-            
+
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 text-sm hover:text-secondary transition-colors">
+              <Link to="/privacidad" className="text-gray-400 text-sm hover:text-secondary transition-colors">
                 Política de Privacidad
-              </a>
-              <a href="#" className="text-gray-400 text-sm hover:text-secondary transition-colors">
+              </Link>
+              <Link to="/terminos" className="text-gray-400 text-sm hover:text-secondary transition-colors">
                 Términos y Condiciones
-              </a>
+              </Link>
             </div>
           </div>
         </Container>

@@ -26,7 +26,6 @@ const PropertyCard = ({ property }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image Container */}
       <div className="relative h-64 overflow-hidden">
         <motion.img
           src={image}
@@ -37,13 +36,9 @@ const PropertyCard = ({ property }) => {
           }}
           transition={{ duration: 0.3 }}
         />
-        
-        {/* Category Badge */}
         <div className="absolute top-4 left-4">
           <Badge variant="primary">{category}</Badge>
         </div>
-        
-        {/* Quick View Overlay */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
@@ -58,8 +53,6 @@ const PropertyCard = ({ property }) => {
           </Link>
         </motion.div>
       </div>
-      
-      {/* Content */}
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm text-gray-500">{operation}</span>
@@ -69,8 +62,6 @@ const PropertyCard = ({ property }) => {
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {operation} {category} - {name}
         </h3>
-        
-        {/* Features */}
         <div className="flex items-center space-x-4 text-sm text-gray-600 mb-4">
           <span>{features.bedrooms} Hab</span>
           <span>•</span>
@@ -78,8 +69,6 @@ const PropertyCard = ({ property }) => {
           <span>•</span>
           <span>{features.area} m²</span>
         </div>
-        
-        {/* Price and Link */}
         <div className="flex items-center justify-between pt-4 border-t">
           <span className="text-2xl font-bold text-primary">
             {priceDisplay}

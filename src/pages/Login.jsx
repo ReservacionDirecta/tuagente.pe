@@ -77,16 +77,12 @@ const Login = () => {
             disabled={loading}
             className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors disabled:opacity-50"
           >
-            {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
-          </button>
-        </form>
-
-        <p className="text-center text-gray-500 text-sm mt-6">
-          Demo: admin@tuagente.pe / admin123
-        </p>
+          {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+        </button>
+      </form>
       </div>
     </div>
   );
-};
+}
 
 export default Login;
