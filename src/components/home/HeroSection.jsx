@@ -1,25 +1,20 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
 
 const HeroSection = () => {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
-      <motion.div
-        style={{ y: bgY }}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: `url('/images/hero-lima.jpg')`,
+        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60" />
-      </motion.div>
+      </div>
 
       <Container className="relative z-10">
         <div className="max-w-2xl mx-auto text-center lg:text-left">
