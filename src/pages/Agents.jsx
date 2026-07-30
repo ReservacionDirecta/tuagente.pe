@@ -34,7 +34,7 @@ const Agents = () => {
                   <img
                     src={agent.image}
                     alt={agent.name}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
                   />
                 </div>
 
