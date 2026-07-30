@@ -114,9 +114,15 @@ const Header = () => {
             ))}
           </div>
           <div className="hidden lg:block">
-            <Button variant="secondary" size="sm">
-              Agenda tu visita
-            </Button>
+            <a
+              href="https://wa.me/51947859358?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20visita."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="secondary" size="sm">
+                Agenda tu visita
+              </Button>
+            </a>
           </div>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
