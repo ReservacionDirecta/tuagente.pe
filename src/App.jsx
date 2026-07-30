@@ -19,6 +19,8 @@ import Dashboard from './pages/admin/Dashboard';
 import PropertiesAdmin from './pages/admin/PropertiesAdmin';
 import PropertyForm from './pages/admin/PropertyForm';
 import UsersAdmin from './pages/admin/UsersAdmin';
+import AppointmentsAdmin from './pages/admin/AppointmentsAdmin';
+import WhatsAppButton from './components/ui/WhatsAppButton';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -32,6 +34,7 @@ const PublicLayout = ({ children }) => (
     <Header />
     <main className="flex-grow">{children}</main>
     <Footer />
+    <WhatsAppButton />
   </div>
 );
 
@@ -57,6 +60,7 @@ const App = () => {
             <Route path="propiedades/nueva" element={<PropertyForm />} />
             <Route path="propiedades/:id/editar" element={<PropertyForm />} />
             <Route path="usuarios" element={<UsersAdmin />} />
+            <Route path="citas" element={<AppointmentsAdmin />} />
           </Route>
         </Routes>
       </AuthProvider>

@@ -7,6 +7,7 @@ import Container from '../components/layout/Container';
 import Section from '../components/layout/Section';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
+import AppointmentModal from '../components/ui/AppointmentModal';
 import { contactInfo } from '../utils/constants';
 
 const PropertyDetail = () => {
@@ -14,6 +15,7 @@ const PropertyDetail = () => {
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [showAppointment, setShowAppointment] = useState(false);
 
   useEffect(() => {
     fetch(`/api/properties/${id}`)
@@ -232,9 +234,18 @@ const PropertyDetail = () => {
                   </a>
                 </div>
 
-                <Button variant="secondary" className="w-full mb-3">
+                <Button variant="secondary" className="w-full mb-3" onClick={() => setShowAppointment(true)}>
                   Agendar Visita
                 </Button>
+
+                <a
+                  href={`${contactInfo.social.whatsapp}?text=${encodeURIComponent(`Hola, me interesa la propiedad "${property.name}". Quisiera más información.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-[#25D366] hover:bg-[#20ba5a] text-white font-medium py-3 rounded-lg transition-colors mb-3"
+                >
+                  WhatsApp
+                </a>
 
                 <Button variant="outline" className="w-full">
                   Solicitar Información
@@ -244,6 +255,13 @@ const PropertyDetail = () => {
           </div>
         </Section>
       </main>
+
+      <AppointmentModal
+        isOpen={showAppointment}
+        onClose={() => setShowAppointment(false)}
+        propertyId={property.id}
+        propertyName={property.name}
+      />
     </>
   );
 };

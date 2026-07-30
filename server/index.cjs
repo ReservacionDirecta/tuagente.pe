@@ -9,6 +9,7 @@ require('./db.cjs');
 
 const authRoutes = require('./routes/auth.cjs');
 const propertyRoutes = require('./routes/properties.cjs');
+const appointmentRoutes = require('./routes/appointments.cjs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
+app.use('/api/appointments', appointmentRoutes);
 
 // SPA fallback: serve index.html for all non-API, non-file routes
 app.get(/^\/(?!api).*/, (req, res) => {
