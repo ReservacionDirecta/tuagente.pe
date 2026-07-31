@@ -7,12 +7,12 @@ const Button = ({
   className = '', 
   ...props 
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-colors duration-300';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 ease-out cursor-pointer active:scale-[0.97]';
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary-dark',
-    secondary: 'bg-secondary text-gray-900 hover:bg-secondary-dark',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    primary: 'bg-primary text-white hover:bg-primary-dark shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5',
+    secondary: 'bg-secondary text-gray-900 hover:bg-secondary-dark shadow-md shadow-secondary/20 hover:shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5',
+    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5',
   };
   
   const sizes = {

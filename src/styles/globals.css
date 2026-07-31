@@ -16,22 +16,44 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-bold;
   }
+
+  ::selection {
+    @apply bg-primary/20 text-primary-dark;
+  }
 }
 
 @layer components {
   .btn-primary {
     @apply bg-primary text-white px-6 py-3 rounded-full font-medium 
-           hover:bg-primary-dark transition-colors duration-300
-           inline-flex items-center justify-center;
+           hover:bg-primary-dark transition-all duration-300 ease-out
+           inline-flex items-center justify-center
+           shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30
+           hover:-translate-y-0.5 active:scale-[0.97];
   }
   
   .btn-secondary {
     @apply bg-secondary text-gray-900 px-6 py-3 rounded-full font-medium 
-           hover:bg-secondary-dark transition-colors duration-300
-           inline-flex items-center justify-center;
+           hover:bg-secondary-dark transition-all duration-300 ease-out
+           inline-flex items-center justify-center
+           shadow-md shadow-secondary/20 hover:shadow-lg hover:shadow-secondary/30
+           hover:-translate-y-0.5 active:scale-[0.97];
   }
   
   .section-padding {
     @apply py-16 lg:py-24;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  .premium-shadow-lg {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.08);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

@@ -32,9 +32,9 @@ const PropertyCard = ({ property }) => {
           alt={name}
           className="w-full h-full object-cover"
           animate={{
-            scale: isHovered ? 1.1 : 1,
+            scale: isHovered ? 1.08 : 1,
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         />
         <div className="absolute top-4 left-4">
           <Badge variant="primary">{category}</Badge>

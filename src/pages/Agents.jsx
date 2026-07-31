@@ -29,12 +29,12 @@ const Agents = () => {
         <Section>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {agents.map((agent) => (
-              <Card key={agent.id} hover className="overflow-hidden">
+              <Card key={agent.id} hover className="overflow-hidden group">
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={agent.image}
                     alt={agent.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110"
                   />
                 </div>
 

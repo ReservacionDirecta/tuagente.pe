@@ -49,9 +49,9 @@ const Header = () => {
   
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         useDarkText
-          ? 'bg-white shadow-md'
+          ? 'bg-white/90 backdrop-blur-xl shadow-sm shadow-gray-200/50'
           : 'bg-transparent'
       }`}
     >
@@ -92,7 +92,7 @@ const Header = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2"
+                      className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl shadow-gray-200/40 py-2 ring-1 ring-gray-100"
                     >
                       {item.children.map((child) => (
                         <Link

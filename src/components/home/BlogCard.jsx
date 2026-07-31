@@ -8,12 +8,12 @@ const BlogCard = ({ article }) => {
   const { slug, title, excerpt, image, category, date, author } = article;
   
   return (
-    <Card hover className="overflow-hidden">
+    <Card hover className="overflow-hidden group">
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
         />
         <div className="absolute top-4 left-4">
           <Badge variant="secondary">{category}</Badge>
