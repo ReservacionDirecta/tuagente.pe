@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { IoHome, IoBuild, IoPeople, IoMenu, IoClose, IoLogOut, IoChevronDown, IoDocumentText, IoCalendar } from 'react-icons/io5';
+import { IoHome, IoBuild, IoPeople, IoMenu, IoClose, IoLogOut, IoChevronDown, IoDocumentText, IoCalendar, IoGrid } from 'react-icons/io5';
 
 const AdminLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,6 +15,7 @@ const AdminLayout = () => {
   }, [location.pathname]);
 
   const navItems = [
+    { name: 'Dashboard', href: '/admin', icon: IoGrid },
     { name: 'Propiedades', href: '/admin/propiedades', icon: IoBuild },
     { name: 'Citas', href: '/admin/citas', icon: IoCalendar },
     { name: 'Blog', href: '/admin/blog', icon: IoDocumentText },
