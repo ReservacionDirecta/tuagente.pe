@@ -6,15 +6,19 @@ import Button from '../ui/Button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden">
+      <img
+        src="/images/hero-lima.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-top md:hidden"
+      />
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-fixed hidden md:block"
         style={{
           backgroundImage: `url('/images/hero-lima.jpg')`,
         }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-60" />
-      </div>
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
 
       <Container className="relative z-10">
         <div className="max-w-2xl mx-auto text-center lg:text-left">
