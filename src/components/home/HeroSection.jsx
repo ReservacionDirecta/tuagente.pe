@@ -7,17 +7,15 @@ import Button from '../ui/Button';
 const HeroSection = () => {
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden">
-      <img
-        src="/images/hero-lima.jpg"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-top md:hidden"
-      />
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat bg-fixed hidden md:block"
-        style={{
-          backgroundImage: `url('/images/hero-lima.jpg')`,
-        }}
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/video/Timelapse.mp4" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
       <Container className="relative z-10">
