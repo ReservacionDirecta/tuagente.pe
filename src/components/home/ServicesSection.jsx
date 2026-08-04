@@ -6,10 +6,10 @@ import { HiHome, HiEmojiHappy, HiCalendar, HiUserGroup } from 'react-icons/hi';
 
 const ServicesSection = () => {
   const stats = [
-    { icon: HiHome, target: 150, label: 'PROPIEDADES' },
-    { icon: HiEmojiHappy, target: 200, label: 'CLIENTES FELICES' },
-    { icon: HiCalendar, target: 10, label: 'AÑOS EXPERIENCIA' },
-    { icon: HiUserGroup, target: 25, label: 'AGENTES EXPERTOS' },
+    { icon: HiHome, target: 347, label: 'PROPIEDADES' },
+    { icon: HiEmojiHappy, target: 132, label: 'CLIENTES FELICES' },
+    { icon: HiCalendar, target: 17, label: 'AÑOS EXPERIENCIA' },
+    { icon: HiUserGroup, target: 10, label: 'AGENTES EXPERTOS' },
   ];
   
   return (

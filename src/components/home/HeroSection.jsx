@@ -6,7 +6,7 @@ import Button from '../ui/Button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden pt-24 pb-12 lg:py-0">
       <video
         autoPlay
         loop
@@ -16,7 +16,7 @@ const HeroSection = () => {
       >
         <source src="/video/Timelapse.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      <div className="absolute inset-0 bg-black/60" />
 
       <Container className="relative z-10">
         <div className="max-w-2xl mx-auto text-center lg:text-left">
@@ -24,7 +24,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
           >
             Encuentra con nosotros el inmueble que buscas
           </motion.h1>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-lg md:text-xl text-gray-200"
+            className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200"
           >
             Descubre nuestra selección de propiedades exclusivas en las mejores ubicaciones de Lima
           </motion.p>
@@ -42,16 +42,16 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
           >
-            <Link to="/propiedades">
-              <Button variant="secondary" size="lg">
+            <Link to="/propiedades" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                 Ver propiedades
               </Button>
             </Link>
 
-            <Link to="/contacto">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Link to="/contacto" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary">
                 Agenda una visita
               </Button>
             </Link>

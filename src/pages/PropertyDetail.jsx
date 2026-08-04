@@ -127,37 +127,37 @@ const PropertyDetail = () => {
                 {property.priceDisplay}
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <IoBed className="w-8 h-8 mx-auto text-primary mb-2" />
-                  <span className="block text-2xl font-bold text-gray-900">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg text-center">
+                  <IoBed className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-primary mb-2" />
+                  <span className="block text-xl sm:text-2xl font-bold text-gray-900">
                     {property.features.bedrooms}
                   </span>
-                  <span className="text-gray-600">Habitaciones</span>
+                  <span className="text-xs sm:text-sm text-gray-600">Habitaciones</span>
                 </div>
 
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <IoWater className="w-8 h-8 mx-auto text-primary mb-2" />
-                  <span className="block text-2xl font-bold text-gray-900">
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg text-center">
+                  <IoWater className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-primary mb-2" />
+                  <span className="block text-xl sm:text-2xl font-bold text-gray-900">
                     {property.features.bathrooms}
                   </span>
-                  <span className="text-gray-600">Baños</span>
+                  <span className="text-xs sm:text-sm text-gray-600">Baños</span>
                 </div>
 
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <IoResize className="w-8 h-8 mx-auto text-primary mb-2" />
-                  <span className="block text-2xl font-bold text-gray-900">
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg text-center">
+                  <IoResize className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-primary mb-2" />
+                  <span className="block text-xl sm:text-2xl font-bold text-gray-900">
                     {property.features.area}
                   </span>
-                  <span className="text-gray-600">m²</span>
+                  <span className="text-xs sm:text-sm text-gray-600">m² Área</span>
                 </div>
 
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <IoCar className="w-8 h-8 mx-auto text-primary mb-2" />
-                  <span className="block text-2xl font-bold text-gray-900">
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg text-center">
+                  <IoCar className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-primary mb-2" />
+                  <span className="block text-xl sm:text-2xl font-bold text-gray-900">
                     {property.features.parking}
                   </span>
-                  <span className="text-gray-600">Estacionamiento</span>
+                  <span className="text-xs sm:text-sm text-gray-600">Estacionamiento</span>
                 </div>
               </div>
 
