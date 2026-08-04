@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-const StatsCounter = ({ icon, target, label }) => {
+const StatsCounter = ({ icon: Icon, target, label }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -27,6 +27,8 @@ const StatsCounter = ({ icon, target, label }) => {
     }
   }, [isInView, target]);
   
+  const IconComponent = typeof Icon === 'function' ? Icon : null;
+
   return (
     <motion.div
       ref={ref}
@@ -35,8 +37,8 @@ const StatsCounter = ({ icon, target, label }) => {
       transition={{ duration: 0.5 }}
       className="text-center p-6"
     >
-      <div className="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-        <span className="text-3xl">{icon}</span>
+      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+        {IconComponent ? <IconComponent className="w-8 h-8" /> : <span className="text-3xl">{Icon}</span>}
       </div>
       
       <motion.span

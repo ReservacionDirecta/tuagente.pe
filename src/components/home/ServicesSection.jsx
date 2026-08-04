@@ -2,13 +2,14 @@ import React from 'react';
 import Container from '../layout/Container';
 import Section from '../layout/Section';
 import StatsCounter from './StatsCounter';
+import { HiHome, HiEmojiHappy, HiCalendar, HiUserGroup } from 'react-icons/hi';
 
 const ServicesSection = () => {
   const stats = [
-    { icon: '🏠', target: 150, label: 'PROPIEDADES' },
-    { icon: '😊', target: 200, label: 'CLIENTES FELICES' },
-    { icon: '📅', target: 10, label: 'AÑOS EXPERIENCIA' },
-    { icon: '👨‍💼', target: 25, label: 'AGENTES EXPERTOS' },
+    { icon: HiHome, target: 150, label: 'PROPIEDADES' },
+    { icon: HiEmojiHappy, target: 200, label: 'CLIENTES FELICES' },
+    { icon: HiCalendar, target: 10, label: 'AÑOS EXPERIENCIA' },
+    { icon: HiUserGroup, target: 25, label: 'AGENTES EXPERTOS' },
   ];
   
   return (
