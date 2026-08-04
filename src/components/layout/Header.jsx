@@ -58,10 +58,11 @@ const Header = () => {
       <Container>
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
-            <span className={`text-2xl font-bold ${useDarkText ? 'text-primary' : 'text-white'}`}>
-              TUAGENTE
-              <span className="text-secondary">.PE</span>
-            </span>
+            <img 
+              src="/tuagentepe logo.jpeg" 
+              alt="TUAGENTE.PE" 
+              className="h-10 w-auto object-contain rounded-md"
+            />
           </Link>
           <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (

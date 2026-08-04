@@ -8,15 +8,16 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#1e3a5f',
-          light: '#2c5282',
-          dark: '#1a365d',
+          DEFAULT: '#18181b', // Negro humo oscuro (Zinc 900)
+          light: '#27272a',   // Zinc 800
+          dark: '#09090b',    // Zinc 950
         },
         secondary: {
-          DEFAULT: '#fbbf24',
-          light: '#fcd34d',
-          dark: '#f59e0b',
+          DEFAULT: '#71717a', // Gris medio elegante (Zinc 500)
+          light: '#a1a1aa',   // Zinc 400
+          dark: '#3f3f46',    // Zinc 700
         },
+        snow: '#fafafa',       // Blanco nieve (Zinc 50)
       },
       fontFamily: {
         sans: ['Poppins', 'system-ui', 'sans-serif'],

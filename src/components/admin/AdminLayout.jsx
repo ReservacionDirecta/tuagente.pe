@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { IoHome, IoBuild, IoPeople, IoMenu, IoClose, IoLogOut, IoChevronDown, IoDocumentText, IoCalendar, IoGrid } from 'react-icons/io5';
@@ -36,7 +36,11 @@ const AdminLayout = () => {
     <>
       <div className="p-4 border-b border-white/10">
         <div className="flex items-center justify-between">
-          <span className="text-white text-xl font-bold">TUAGENTE<span className="text-secondary">.PE</span></span>
+          <img 
+            src="/tuagentepe logo.jpeg" 
+            alt="TUAGENTE.PE" 
+            className="h-8 w-auto object-contain rounded-md bg-white p-0.5"
+          />
           <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-white p-1">
             <IoClose className="w-6 h-6" />
           </button>

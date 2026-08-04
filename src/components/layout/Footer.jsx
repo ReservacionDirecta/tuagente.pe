@@ -43,10 +43,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold">
-                TUAGENTE
-                <span className="text-secondary">.PE</span>
-              </span>
+              <img 
+                src="/tuagentepe logo.jpeg" 
+                alt="TUAGENTE.PE" 
+                className="h-10 w-auto object-contain rounded-md bg-white p-1"
+              />
             </Link>
             <p className="mt-4 text-gray-300 leading-relaxed">
               Acompañamos a familias y empresas a encontrar la propiedad ideal en Lima desde 2014.

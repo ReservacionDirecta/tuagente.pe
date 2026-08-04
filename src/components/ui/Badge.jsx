@@ -7,7 +7,7 @@ const Badge = ({
 }) => {
   const variants = {
     primary: 'bg-primary text-white',
-    secondary: 'bg-secondary text-gray-900',
+    secondary: 'bg-secondary text-white',
     success: 'bg-green-500 text-white',
     warning: 'bg-yellow-500 text-white',
     danger: 'bg-red-500 text-white',

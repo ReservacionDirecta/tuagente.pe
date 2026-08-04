@@ -28,12 +28,13 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">
-            TUAGENTE<span className="text-secondary">.PE</span>
-          </h1>
-          <p className="text-gray-500 mt-2">Panel de Administración</p>
-        </div>
+          <div className="flex justify-center mb-2">
+            <img 
+              src="/tuagentepe logo.jpeg" 
+              alt="TUAGENTE.PE" 
+              className="h-12 w-auto object-contain rounded-md"
+            />
+          </div>
 
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
